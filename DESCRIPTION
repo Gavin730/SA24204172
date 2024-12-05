@@ -1,0 +1,18 @@
+Package: SA24204172
+Type: Package
+Title: functions for 'Statistical Computing' course
+Version: 1.0
+Date: 2024/12/1
+Author: Wenluo Zhang
+Maintainer: Wenluo Zhang <wl_zhang@mail.ustc.edu.cn>
+Description: Several R and Rcpp function are included in this package for illustration. 
+License: GPL (>= 2)
+Imports: Rcpp, microbenchmark, knitr,rmarkdown,MASS, boot, DAAG, bootstrap, ggplot2, pheatmap,stats,Matrix
+LinkingTo: Rcpp,RcppEigen
+RoxygenNote: 7.3.2
+Encoding: UTF-8
+VignetteBuilder: knitr
+URL: https://github.com/Gavin730/SA24204172
+BugReports: https://github.com/Gavin730/SA24204172/issues
+NeedsCompilation: yes
+Packaged: 2024/12/05 14:02:49 UTC; Wenluo Zhang
