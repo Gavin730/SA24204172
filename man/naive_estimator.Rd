@@ -2,28 +2,25 @@
 % Please edit documentation in R/RcppExports.R
 \name{naive_estimator}
 \alias{naive_estimator}
-\title{A Gibbs sampler using Rcpp}
+\title{A estimator using Rcpp}
 \usage{
 naive_estimator(Cov, p, q)
 }
 \arguments{
-\item{Cov}{the number of samples}
+\item{Cov}{covariance matrix}
 
-\item{p}{the number of between-sample random numbers}
+\item{p}{dim1}
 
-\item{q}{111}
+\item{q}{dim2}
 }
 \value{
-a random sample of size \code{n}
+solution
 }
 \description{
-A Gibbs sampler using Rcpp
+A estimator using Rcpp
 }
 \examples{
 \dontrun{
-rnC <- gibbsC(100,10)
-par(mfrow=c(2,1));
-plot(rnC[,1],type='l')
-plot(rnC[,2],type='l')
+result <- naive_estimator(Cov,p,q)
 }
 }

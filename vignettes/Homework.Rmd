@@ -705,7 +705,7 @@ rm(list = ls())
 
 target_pdf <- function(x) (1 / (pi * (1 + x^2)))#目标分布
 n <- 1000000
-
+set.seed(123)
 # Metropolis-Hastings算法，采用正态作为提议分布
 m_h <- function( n) {
   samples <- numeric(n+100000)

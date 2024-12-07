@@ -44,7 +44,13 @@ pheatmap(Cov,cluster_rows = FALSE, cluster_cols = FALSE,cellwidth = 2, cellheigh
 ```
 
 ##  示例4
-算法一$\left(\widehat{\mathbf{\Sigma} }_1\pmb{,}\widehat{\mathbf{\Sigma}}_2\right)=\underset{\mathbf{\Sigma} _1\in \mathbb{R}^{p\times p},\mathbf{\Sigma} _2\in \mathbb{R}^{q\times q}}{\text{argmin}} \left\| \widehat{\mathbf{\Sigma}}^N-\mathbf{\Sigma} _2\otimes \mathbf{\Sigma} _1\right\| _{\mathbf{F}}^2.$
+算法一$\left(\widehat{\mathbf{\Sigma} }_1\pmb{,}\widehat{\mathbf{\Sigma}}_2\right)=\underset{\mathbf{\Sigma} _1\in \mathbb{R}^{p\times p},\mathbf{\Sigma} _2\in \mathbb{R}^{q\times q}}{\text{argmin}} \left\| \widehat{\mathbf{\Sigma}}^N-\mathbf{\Sigma} _2\otimes \mathbf{\Sigma} _1\right\| _{\mathbf{F}}^2.$其中\(\widehat{\symbfup{\Sigma}}^N\, = \, \frac{1}{n}\sum_{i=1}^n\left\{\mathrm{vec} (\mathbf{X_i})-\mathrm{vec}(\symbf{\widehat{\mu }})\right\}\left\{\mathrm{vec} (\mathbf{X_i})- \mathrm{vec}(\symbf{\widehat{\mu }})\right\}^{\top}\)为协方差的平凡估计。
+
+设\[\widehat{\mathbf{\Sigma} }^N\, =\, \begin{pmatrix}
+\mathbf{\widehat{\Sigma}}_{1,1} ^N& \cdots & \mathbf{\widehat{\Sigma}}_{1,q}^N \\
+\vdots & \ddots & \vdots \\
+\mathbf{\widehat{\Sigma}}_{q,1^N} & \cdots & \mathbf{\widehat{\Sigma}}_{q,q}^N
+\end{pmatrix},\quad \mathbf{\widehat{\Sigma}}_{i,j}^N\in \mathbb{R}^{p \times p},\]
 记\(
 \widetilde{\mathbf{\Sigma}} = 
 \begin{pmatrix}

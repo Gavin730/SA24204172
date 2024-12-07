@@ -1,17 +1,14 @@
 #include <RcppEigen.h>
 using namespace Rcpp;
-//' @title A Gibbs sampler using Rcpp
-//' @description A Gibbs sampler using Rcpp
-//' @param Cov the number of samples
-//' @param p the number of between-sample random numbers
-//' @param q 111
-//' @return a random sample of size \code{n}
+//' @title A estimator using Rcpp
+//' @description A estimator using Rcpp
+//' @param Cov covariance matrix
+//' @param p dim1
+//' @param q dim2
+//' @return solution
 //' @examples
 //' \dontrun{
-//' rnC <- gibbsC(100,10)
-//' par(mfrow=c(2,1));
-//' plot(rnC[,1],type='l')
-//' plot(rnC[,2],type='l')
+//' result <- naive_estimator(Cov,p,q)
 //' }
 //' @export
 // [[Rcpp::export]]
