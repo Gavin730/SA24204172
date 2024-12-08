@@ -44,7 +44,7 @@ pheatmap(Cov,cluster_rows = FALSE, cluster_cols = FALSE,cellwidth = 2, cellheigh
 ```
 
 ##  示例4
-算法一$\left(\widehat{\mathbf{\Sigma} }_1\pmb{,}\widehat{\mathbf{\Sigma}}_2\right)=\underset{\mathbf{\Sigma} _1\in \mathbb{R}^{p\times p},\mathbf{\Sigma} _2\in \mathbb{R}^{q\times q}}{\text{argmin}} \left\| \widehat{\mathbf{\Sigma}}^N-\mathbf{\Sigma} _2\otimes \mathbf{\Sigma} _1\right\| _{\mathbf{F}}^2.$其中\(\widehat{\symbfup{\Sigma}}^N\, = \, \frac{1}{n}\sum_{i=1}^n\left\{\mathrm{vec} (\mathbf{X_i})-\mathrm{vec}(\symbf{\widehat{\mu }})\right\}\left\{\mathrm{vec} (\mathbf{X_i})- \mathrm{vec}(\symbf{\widehat{\mu }})\right\}^{\top}\)为协方差的平凡估计。
+算法一$\left(\widehat{\mathbf{\Sigma} }_1\pmb{,}\widehat{\mathbf{\Sigma}}_2\right)=\underset{\mathbf{\Sigma} _1\in \mathbb{R}^{p\times p},\mathbf{\Sigma} _2\in \mathbb{R}^{q\times q}}{\text{argmin}} \left\| \widehat{\mathbf{\Sigma}}^N-\mathbf{\Sigma} _2\otimes \mathbf{\Sigma} _1\right\| _{\mathbf{F}}^2.$其中\(\widehat{\mathbf{\Sigma}}^N\, = \, \frac{1}{n}\sum_{i=1}^n\left\{\mathrm{vec} (\mathbf{X_i})-\mathrm{vec}(\mathbf{\widehat{\mu }})\right\}\left\{\mathrm{vec} (\mathbf{X_i})- \mathrm{vec}(\mathbf{\widehat{\mu }})\right\}^{\top}\)为协方差的平凡估计。
 
 设\[\widehat{\mathbf{\Sigma} }^N\, =\, \begin{pmatrix}
 \mathbf{\widehat{\Sigma}}_{1,1} ^N& \cdots & \mathbf{\widehat{\Sigma}}_{1,q}^N \\
@@ -63,8 +63,8 @@ pheatmap(Cov,cluster_rows = FALSE, cluster_cols = FALSE,cellwidth = 2, cellheigh
 \end{pmatrix}
 \), 解为\[
 \begin{aligned}
-    \text{vec}(\mathbf{\Sigma}_1) &= \sqrt{\sigma_1} \mathbf{v}_1 \\
-    \text{vec}(\mathbf{\Sigma}_2) &= \sqrt{\sigma_1} \mathbf{u}_1.
+    \text{vec}(\widehat{\mathbf{\Sigma}_1 }) &= \sqrt{\sigma_1} \mathbf{v}_1 \\
+    \text{vec}(\widehat{\mathbf{\Sigma}_2 }) &= \sqrt{\sigma_1} \mathbf{u}_1.
 \end{aligned}
 \]
 
@@ -95,4 +95,15 @@ pheatmap(result_2$Sigma2,cluster_rows = FALSE, cluster_cols = FALSE )
 pheatmap(result_2$Sigma1,cluster_rows = FALSE, cluster_cols = FALSE )
 ```
 
+```{r}
+library(SA24204172)
+library(pheatmap)
+
+n_samples <- 50
+p_size <- 24
+q_size <- 7
+rho_value <- 0.8
+sigma2 <- AR1_covariance_matrix(p_size, rho_value)
+pheatmap(sigma2,cluster_rows = FALSE, cluster_cols = FALSE )
+```
 
